@@ -112,5 +112,13 @@ It’s because encryption is the key (pun absolutely intended) to increasing the
 
 PKI has become an appliance with service providers and a functional oligopoly of certificate authorities that play well with the major browsers. That isn’t necessarily a bad thing; it’s simply how this technology evolved into its current form of staid usefulness and occasional security hiccups. In reality, most people would do better knowing how best to implement PKI, since vulnerabilities are in general about the endpoints of encryption, not in the encryption itself. For instance: don’t leave 777 perms on the directory with your private keys. If your security is compromised, it’s likely not because someone cracked your key encryption — they just snagged the files from a directory they shouldn’t have been allowed in. Most PKI security issues are actually sysadmin issues. A new 384-bit ECDSA key isn’t going to be cracked by the NSA brute forcing it. It’ll be stolen from a thumb drive at a coffee shop. PKI security is the same as all other kinds of security; if you don’t track your assets and keep them updated, you’ve got Schroedinger’s Vulnerability on your hands.
 
+![image](https://user-images.githubusercontent.com/61211023/124841075-51717800-df84-11eb-8f7e-ee8c9a2a4829.png)
+
+![image](https://user-images.githubusercontent.com/61211023/124841100-63ebb180-df84-11eb-85e4-8068abc6619b.png)
+
+![image](https://user-images.githubusercontent.com/61211023/124841275-c3e25800-df84-11eb-9129-469e3c029bfc.png)
+
+
+
 
 
