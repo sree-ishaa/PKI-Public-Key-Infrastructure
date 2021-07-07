@@ -92,9 +92,9 @@ You trust several CAs, and the CAs will help you to verify all other people in t
 **Elements of security**
 - The three elements of security are
 
-   1. Authenticity — The message is truely sent from the people we are expecting.
-   2. Integrity — The message is not altered by unauthorized people.
-   3. Confidentiality — The message is encrypted and can only be decrypted by authorized people.
+   a. Authenticity — The message is truely sent from the people we are expecting.
+   b. Integrity — The message is not altered by unauthorized people.
+   c. Confidentiality — The message is encrypted and can only be decrypted by authorized people.
 
 
 
