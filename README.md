@@ -25,3 +25,10 @@ In asymmetric encryption, there is a pair of keys for one identity.
    - Public key
 The private key must not be shared to others, while the public key can be shared with anyone.
 
+If you have ever generated keys for application of SSH, you can find them in the following locations.
+- ssh-keygen is a tool for creating new authentication key pairs for SSH
+— www.ssh.com
+~/.ssh/id_rsa // private key
+~/.ssh/id_rsa.pub // public key
+The file name may be id_rsa or id_dsa, which depending on your key generation algorithm.
+
