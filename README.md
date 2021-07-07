@@ -77,11 +77,23 @@ Digital certificate is used to verify the identity of the sender, i.e. authentic
    
 Issuer’s digital signature, to ensure the identity of subject’s identity and its public key. 
 
-We often call it *Certificate Authority (CA).*
+We often call it **Certificate Authority (CA).**
 
-when we verify a message’s signature, we have to use its public key.
+**When we verify a message’s signature, we have to use its public key.**
 
 *How can we ensure that the public key (and the authority’s signature) is really from a trustable authority?*
+
+**Simple solution**
+
+A few certificated authorities are pre-configured in users’ OS and browsers. By the time they install the software, a list of CAs is trusted by default.
+
+You trust several CAs, and the CAs will help you to verify all other people in the world.
+
+**Elements of security**
+- three elements of security.
+   - Authenticity — The message is truely sent from the people we are expecting.
+   - Integrity — The message is not altered by unauthorized people.
+   - Confidentiality — The message is encrypted and can only be decrypted by authorized people.
 
 
 
