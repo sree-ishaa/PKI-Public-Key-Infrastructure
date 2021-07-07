@@ -90,7 +90,8 @@ A few certificated authorities are pre-configured in users’ OS and browsers. B
 You trust several CAs, and the CAs will help you to verify all other people in the world.
 
 **Elements of security**
-- three elements of security.
+- The three elements of security are
+
    - Authenticity — The message is truely sent from the people we are expecting.
    - Integrity — The message is not altered by unauthorized people.
    - Confidentiality — The message is encrypted and can only be decrypted by authorized people.
