@@ -3,6 +3,8 @@
 
 Public Key Infrastructure, as its name indicates, is more like a framework rather than a protocol.
 
+PKI or public key infrastructure is about how two entities learn to trust each other in order to exchange messages securely. You may already know that Kerberos and the KDC (Key Distribution Center) work on a shared-secrets principle, where users can go to a central authority and get authorization to communicate and act in a given network. PKI is a more complex system that understands lots of different networks which may or may not share a common trust authority. In PKI, you’re negotiating trust with a root which then tells you all the other entities that you can trust by default. The central idea of public key infrastructure is that some keys you already trust can delegate their trust (and hence yours) to other keys you don’t yet know. Think of it as a very warm introduction by a friend to someone you don’t yet know!
+
 - the primary components and procedures in the PKI.
 
    - Asymmetric encryption
