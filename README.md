@@ -32,6 +32,11 @@ If you have ever generated keys for application of SSH, you can find them in the
 
 - ~/.ssh/id_rsa // private key
 - ~/.ssh/id_rsa.pub // public key
-- 
+
 The file name may be id_rsa or id_dsa, which depending on your key generation algorithm.
+
+**Encryption and decryption**
+
+When a message is encrypted by the private key, it can be decrypted by the paired public key.
+On the other hand, the message encrypted by the public key, can be decrypted by the paired private key.
 
