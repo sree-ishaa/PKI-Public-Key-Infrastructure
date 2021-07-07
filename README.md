@@ -10,3 +10,5 @@ Public Key Infrastructure, as its name indicates, is more like a framework rathe
 - Digital signature
 - Digital certificate
 - Certificate Authority
+
+[Wikipedia Link] (https://en.wikipedia.org/wiki/Public_key_infrastructure)
