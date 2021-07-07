@@ -74,7 +74,14 @@ Digital certificate is used to verify the identity of the sender, i.e. authentic
 - Digital certificate contains several main components.
    - Subject (owner)
    - Subject’s public key
-Issuer’s digital signature, to ensure the identity of subject’s identity and its public key. We often call it Certificate Authority (CA).
+   
+Issuer’s digital signature, to ensure the identity of subject’s identity and its public key. 
+
+We often call it *Certificate Authority (CA).*
+
+when we verify a message’s signature, we have to use its public key.
+
+*How can we ensure that the public key (and the authority’s signature) is really from a trustable authority?*
 
 
 
