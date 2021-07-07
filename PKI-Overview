@@ -1,0 +1,13 @@
+The primary components and procedures in the PKI.
+Asymmetric encryption
+One-way function
+Digital signature
+Digital certificate
+Certificate Authority
+=================================================================
+Asymmetric encryption:
+A pair of keys
+In asymmetric encryption, there is a pair of keys for one identity.
+Private key
+Public key
+The private key must not be shared to others, while the public key can be shared with anyone.
