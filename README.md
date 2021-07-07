@@ -109,6 +109,7 @@ There are a few other uses for PKI, including encrypting documents in XML and so
 It’s because encryption is the key (pun absolutely intended) to increasing the expense in terms of time for people who have no business watching your traffic to watch your traffic. Simple tools like Wireshark can sniff and read your mail and web traffic in open wireless access points without it.
 
 **Here’s how to conceptualize PKI**
+
 PKI has become an appliance with service providers and a functional oligopoly of certificate authorities that play well with the major browsers. That isn’t necessarily a bad thing; it’s simply how this technology evolved into its current form of staid usefulness and occasional security hiccups. In reality, most people would do better knowing how best to implement PKI, since vulnerabilities are in general about the endpoints of encryption, not in the encryption itself. For instance: don’t leave 777 perms on the directory with your private keys. If your security is compromised, it’s likely not because someone cracked your key encryption — they just snagged the files from a directory they shouldn’t have been allowed in. Most PKI security issues are actually sysadmin issues. A new 384-bit ECDSA key isn’t going to be cracked by the NSA brute forcing it. It’ll be stolen from a thumb drive at a coffee shop. PKI security is the same as all other kinds of security; if you don’t track your assets and keep them updated, you’ve got Schroedinger’s Vulnerability on your hands.
 
 
