@@ -28,7 +28,7 @@ The private key must not be shared to others, while the public key can be shared
 If you have ever generated keys for application of SSH, you can find them in the following locations.
 - ssh-keygen is a tool for creating new authentication key pairs for SSH
 
-— www.ssh.com
+www.ssh.com
 
 - ~/.ssh/id_rsa // private key
 - ~/.ssh/id_rsa.pub // public key
@@ -39,4 +39,8 @@ The file name may be id_rsa or id_dsa, which depending on your key generation al
 
 When a message is encrypted by the private key, it can be decrypted by the paired public key.
 On the other hand, the message encrypted by the public key, can be decrypted by the paired private key.
+
+![image](https://user-images.githubusercontent.com/61211023/124837871-9c3bc180-df7d-11eb-87ac-48015fcc781a.png)
+
+
 
