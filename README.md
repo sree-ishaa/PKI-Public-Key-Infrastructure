@@ -16,4 +16,10 @@ Public Key Infrastructure, as its name indicates, is more like a framework rathe
 [Digital signatures & PKI] ![image](https://user-images.githubusercontent.com/61211023/124836354-c17b0080-df7a-11eb-9129-477405d9ae9f.png)
 
 - A public key infrastructure (PKI) is a set of roles, policies, and procedures needed to create, manage, distribute, use, store, and revoke digital certificates and manage public-key encryption.
+- Asymmetric encryption
+A pair of keys
+In asymmetric encryption, there is a pair of keys for one identity.
+Private key
+Public key
+The private key must not be shared to others, while the public key can be shared with anyone.
 
