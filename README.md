@@ -98,5 +98,18 @@ You trust several CAs, and the CAs will help you to verify all other people in t
    2. Integrity — The message is not altered by unauthorized people.
    3. Confidentiality — The message is encrypted and can only be decrypted by authorized people.
 
+The two major uses for PKI are for email and web traffic. On a very high level, remember that traffic over the Internet is just a series of packets — little chunks of bits and bytes. While we think of email messages and web requests as philosophically distinct, at the heart, they’re just packets with different port addresses. We define the difference between messages and web requests arbitrarily, but the bits and bytes are transmitted in an identical fashion. So, encrypting those packets is conceptually the same in PKI as well.
+
+The other major use for PKI is a web server authenticating and encrypting communications back and forth between a client — an SSL/TLS certificate that’s installed and working when you see “https” instead of “http” at the beginning of a URL. Most of the time, when we’re talking about PKI in a policy sense or in industry, this is what we mean. Certificate authorities such as DigiCert, Comodo, LetsEncrypt, and others will create those paired keys for websites to use to both verify that they are who they say they are, and to encrypt traffic between a client who’s then been assured that they’re talking to the correct web server and not a visually similar fake site created by an attacker.
+
+There are a few other uses for PKI, including encrypting documents in XML and some Internet Of Things applications (but far, far fewer IoT products are using PKI well than should be, if I can mount my saponified standing cube for a brief moment).
+
+**Why do we use PKI and why do information security experts continue to push people and businesses to use encryption everywhere?**
+
+It’s because encryption is the key (pun absolutely intended) to increasing the expense in terms of time for people who have no business watching your traffic to watch your traffic. Simple tools like Wireshark can sniff and read your mail and web traffic in open wireless access points without it.
+
+**Here’s how to conceptualize PKI**
+PKI has become an appliance with service providers and a functional oligopoly of certificate authorities that play well with the major browsers. That isn’t necessarily a bad thing; it’s simply how this technology evolved into its current form of staid usefulness and occasional security hiccups. In reality, most people would do better knowing how best to implement PKI, since vulnerabilities are in general about the endpoints of encryption, not in the encryption itself. For instance: don’t leave 777 perms on the directory with your private keys. If your security is compromised, it’s likely not because someone cracked your key encryption — they just snagged the files from a directory they shouldn’t have been allowed in. Most PKI security issues are actually sysadmin issues. A new 384-bit ECDSA key isn’t going to be cracked by the NSA brute forcing it. It’ll be stolen from a thumb drive at a coffee shop. PKI security is the same as all other kinds of security; if you don’t track your assets and keep them updated, you’ve got Schroedinger’s Vulnerability on your hands.
+
 
 
