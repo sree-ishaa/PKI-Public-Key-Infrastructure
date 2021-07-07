@@ -13,4 +13,5 @@ Public Key Infrastructure, as its name indicates, is more like a framework rathe
 
 [Wikipedia Link] (https://en.wikipedia.org/wiki/Public_key_infrastructure)
 
-![PKI mindmap] (https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goconqr.com%2Fmindmap%2F8704000%2Fpki&psig=AOvVaw3MG8gFQ1u4NbfUAdYmYFvo&ust=1625782672019000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCPDR68f-0fECFQAAAAAdAAAAABAO/200/200)
+[PKI mindmap] (![image](https://user-images.githubusercontent.com/61211023/124836354-c17b0080-df7a-11eb-9129-477405d9ae9f.png)
+
