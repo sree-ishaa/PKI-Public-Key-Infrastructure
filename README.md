@@ -154,6 +154,29 @@ i7+kY+lkB6Na6T02BWnjixI2hkwThRJrn3pwufM2201Lqn7gEDRHA3T1eQJBAKZG
 /Bj9C281XDTQ+Z3PNnMCQQCan+pvj0OZH6o0PAMJGBBwRECPpfZ6mUjwA2YD3g61
 MHjtIYmKKGmn64Qs8zQ4mNEDboQqyaov3Ij/I6c0ZQlc
 -----END RSA PRIVATE KEY-----
+```
+
+**Privacy Enhanced Mail (PEM)**
+   - Privacy Enhanced Mail (PEM) is a Base64 encoded Distinguished Encoding Rules(DER)
+   - PEM file is human readable as it uses 64 printable characters for encoding.
+   - It is easy to share PEM file.
+
+**Display the contents of public key PEM file**
+
+```shell scripting
+# Display the contents of public key PEM file
+$ cat mypublic.pem
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDRFNU++93aEvz3cV8LSUP9ib3i
+UxT7SufdVXcgVFK9M3BYzvroA1uO/parFOJABTkNhTPPP/6mjrU2CPEZJ1zIkpaS
+NJrrhpp/rNMO9nyLYPGs9MfdBiWUPmHW5mY1oD0ye4my0tEsHOlgHC8AhA8OtiHr
+6IY0agXmH/y5YmSWbwIDAQAB
+-----END PUBLIC KEY-----
+```
+**Distinguished Encoding Rules (DER) format of public key**
+
+   - DER is encoded in Type-Length-Value (TLV) format.
+   - DER is in binary format for PEM file and follows certain structure for public key.
 
 
 
