@@ -243,14 +243,29 @@ Modulus:
 Exponent: 65537 (0x10001)
 ```
 **Exponent and modulus printed by openssl rsa matches with the Public exponent and modulus from DER file content.**
+
 *OBJECT IDENTIFIER*
+
 OID describes the object. It is a series of nodes separated by period.
+
 **OID Value:** 1.2.840.113549.1.1.1
+
 **OID description:** Identifier for RSA encryption for use with Public Key Cryptosystem One defined by RSA Inc.
+
 **OID Encoding:**
+
    - The first two nodes of the OID are encoded onto a single byte. The first node is multiplied by the decimal 40 and the result is added to the value of the second node.
    - Node values less than or equal to 127 are encoded on one byte.
    - Node values greater than or equal to 128 are encoded on multiple bytes. Bit 7 of all bytes except the rightmost byte is set to one. Bits 0 through 6 of each byte          contains the encoded value.
+   
+**OID Encoding Example:**
+
+![image](https://user-images.githubusercontent.com/61211023/125074586-66015d80-e0b5-11eb-82e5-97c6b95b2f05.png)
+
+**Representing length in ASN.1 encoding**
+
+   - If number of value bytes is < 128 then length is represented in 1 byte. In this case most significant bit is 0. (Ex:- Line 2, Line 3 in structured DER content above)
+   - If number of value bytes is >= 128 then length is represented in multiple bytes. Most significant bit (bit 7) of first byte is 1 indicating multiple byte length. Bits 0–6 represent number of subsequent bytes for length. (Ex:- Line 1, Line 4 in structured DER content above)
 
 
 
