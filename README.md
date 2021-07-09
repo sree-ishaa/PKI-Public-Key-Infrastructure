@@ -177,6 +177,90 @@ NJrrhpp/rNMO9nyLYPGs9MfdBiWUPmHW5mY1oD0ye4my0tEsHOlgHC8AhA8OtiHr
 
    - DER is encoded in Type-Length-Value (TLV) format.
    - DER is in binary format for PEM file and follows certain structure for public key.
+  
+ ```shell scripting
+ # Convert PEM file to DER format using openssl rsa
+$ openssl rsa -pubin -inform PEM -in mypublic.pem -outform DER -out mypublic.der
+# Dump the DER file in hex format.
+$ xxd -g 1 -u mypublic.der | cut -c -57
+00000000: 30 81 9F 30 0D 06 09 2A 86 48 86 F7 0D 01 01 01
+00000010: 05 00 03 81 8D 00 30 81 89 02 81 81 00 D1 14 D5
+00000020: 3E FB DD DA 12 FC F7 71 5F 0B 49 43 FD 89 BD E2
+00000030: 53 14 FB 4A E7 DD 55 77 20 54 52 BD 33 70 58 CE
+00000040: FA E8 03 5B 8E FE 96 AB 14 E2 40 05 39 0D 85 33
+00000050: CF 3F FE A6 8E B5 36 08 F1 19 27 5C C8 92 96 92
+00000060: 34 9A EB 86 9A 7F AC D3 0E F6 7C 8B 60 F1 AC F4
+00000070: C7 DD 06 25 94 3E 61 D6 E6 66 35 A0 3D 32 7B 89
+00000080: B2 D2 D1 2C 1C E9 60 1C 2F 00 84 0F 0E B6 21 EB
+00000090: E8 86 34 6A 05 E6 1F FC B9 62 64 96 6F 02 03 01
+000000a0: 00 01
+```
+**Structured DER file content**
+```shell scripting
+1:30 81 9F          // Type: 30 (SEQUENCE)          Length: 0x9F
+ 2:|  30 0D          // Type: 30 (SEQUENCE)          Length: 0x0D
+ 3:|  |  06 09       // Type: 06 (OBJECT_IDENTIFIER) Length: 0x09
+ 4:|  |  -  2A 86 48 // 9 bytes OID value. HEX encoding of
+ 5:|  |  -  86 F7 0D //     1.2.840.113549.1.1.1
+ 6:|  |  -  01 01 01 
+ 7:|  |  05 00       // Type: 05 (NULL)              Length: 0x00
+ 8:|  03 81 8D       // Type: 03 (BIT STRING)        Length: 0x8D
+ 9:|  |  -  00       // Number of unused bits in last content byte
+10:|  |  30 81 89    // Type: 30 (SEQUENCE)          Length: 0x89
+11:|  |  |  02 81 81 // Type: 02 (INTEGER)           Length: 0x81
+12:|  |  |  -  00    // Leading ZERO of integer
+13:|  |  |  -  D1 14 D5 3E FB DD DA 12 FC F7 71 5F 0B 49 43 FD
+14:|  |  |  -  89 BD E2 53 14 FB 4A E7 DD 55 77 20 54 52 BD 33
+15:|  |  |  -  70 58 CE FA E8 03 5B 8E FE 96 AB 14 E2 40 05 39
+16:|  |  |  -  0D 85 33 CF 3F FE A6 8E B5 36 08 F1 19 27 5C C8
+17:|  |  |  -  92 96 92 34 9A EB 86 9A 7F AC D3 0E F6 7C 8B 60
+18:|  |  |  -  F1 AC F4 C7 DD 06 25 94 3E 61 D6 E6 66 35 A0 3D
+19:|  |  |  -  32 7B 89 B2 D2 D1 2C 1C E9 60 1C 2F 00 84 0F 0E
+20:|  |  |  -  B6 21 EB E8 86 34 6A 05 E6 1F FC B9 62 64 96 6F
+21:|  |  |  02 03          // Type: 02 (INTEGER)     Length: 0x3
+22:|  |  |  -  01 00 01    // Public Exponent. Hex for 65537
+```
+**DER file contains Object Identifier, Modulus and Public exponent in HEX format.**
+   - Lines 4, 5, 6 is the HEX encoding of OID.
+   - Lines 13 to 20 is the modulus (n).
+   - Line 22 is the public exponent.
+
+**Modulus and Public exponent from public key using openssl**
+```shell scripting
+# Get Modulus and Public exponent from public PEM file
+$ openssl rsa -pubin -inform PEM -text -noout < mypublic.pem
+Public-Key: (1024 bit)
+Modulus:
+    00:d1:14:d5:3e:fb:dd:da:12:fc:f7:71:5f:0b:49:
+    43:fd:89:bd:e2:53:14:fb:4a:e7:dd:55:77:20:54:
+    52:bd:33:70:58:ce:fa:e8:03:5b:8e:fe:96:ab:14:
+    e2:40:05:39:0d:85:33:cf:3f:fe:a6:8e:b5:36:08:
+    f1:19:27:5c:c8:92:96:92:34:9a:eb:86:9a:7f:ac:
+    d3:0e:f6:7c:8b:60:f1:ac:f4:c7:dd:06:25:94:3e:
+    61:d6:e6:66:35:a0:3d:32:7b:89:b2:d2:d1:2c:1c:
+    e9:60:1c:2f:00:84:0f:0e:b6:21:eb:e8:86:34:6a:
+    05:e6:1f:fc:b9:62:64:96:6f
+Exponent: 65537 (0x10001)
+```
+**Exponent and modulus printed by openssl rsa matches with the Public exponent and modulus from DER file content.**
+*OBJECT IDENTIFIER*
+OID describes the object. It is a series of nodes separated by period.
+**OID Value:** 1.2.840.113549.1.1.1
+**OID description:** Identifier for RSA encryption for use with Public Key Cryptosystem One defined by RSA Inc.
+**OID Encoding:**
+   - The first two nodes of the OID are encoded onto a single byte. The first node is multiplied by the decimal 40 and the result is added to the value of the second node.
+   - Node values less than or equal to 127 are encoded on one byte.
+   - Node values greater than or equal to 128 are encoded on multiple bytes. Bit 7 of all bytes except the rightmost byte is set to one. Bits 0 through 6 of each byte          contains the encoded value.
+
+
+
+
+
+
+
+
+
+
 
 
 
