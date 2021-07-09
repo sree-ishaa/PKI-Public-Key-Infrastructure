@@ -118,12 +118,27 @@ PKI has become an appliance with service providers and a functional oligopoly of
 
 ![image](https://user-images.githubusercontent.com/61211023/124841337-e4aaad80-df84-11eb-9b79-9ad39c5d310d.png)
 
+
+**RSA public key : Behind the scene**
+
 ![image](https://user-images.githubusercontent.com/61211023/125069082-2f741480-e0ae-11eb-9497-3f690b20cae9.png)
+
+**What is public and private key in RSA Signing?**
+   - Private key is used to sign a mail / file by the sender and public key is used to verify the signature of the mail / file by the recipient.
+   - Private key contains the prime numbers, modulus, public exponent, private exponent and coefficients.
+   - Public key contains modulus and public exponent.
+   - Modulus (n) is the product of two prime numbers used to generate the key pair.
+   - Public exponent (d) is the exponent used on signed / encoded data to decode the original value.
+
+**Generate RSA private and public key using openssl**
+
+''' bash scriping
+# Generate 1024 bit Private key
+$ openssl genrsa -out myprivate.pem 1024
 
 
 **Crytography Overview**
 **What is Cryptography?**
-
 
 
 
