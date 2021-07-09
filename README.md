@@ -132,14 +132,28 @@ PKI has become an appliance with service providers and a functional oligopoly of
 
 **Generate RSA private and public key using openssl**
 
-''' bash scriping
+```shell script
 # Generate 1024 bit Private key
 $ openssl genrsa -out myprivate.pem 1024
-
-
-**Crytography Overview**
-**What is Cryptography?**
-
+# Separate the public part from the Private key file.
+$ openssl rsa -in myprivate.pem -pubout > mypublic.pem
+# Display the contents of private key
+$ cat myprivate.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIICXQIBAAKBgQDRFNU++93aEvz3cV8LSUP9ib3iUxT7SufdVXcgVFK9M3BYzvro
+A1uO/parFOJABTkNhTPPP/6mjrU2CPEZJ1zIkpaSNJrrhpp/rNMO9nyLYPGs9Mfd
+BiWUPmHW5mY1oD0ye4my0tEsHOlgHC8AhA8OtiHr6IY0agXmH/y5YmSWbwIDAQAB
+AoGAAj/IH3pUI6FqqTrF+/gYzCRsL4AXTLC8l8vwkR93GGPyRHJNjqtik8I3WrXJ
+zUiBGZ0iNouIsL/+QQuNlGiw/c5i2X3nTntREDS9xs2M0x+MWD/5qI1sn0Qk0HNP
+BbDczlvO8wXNFGIHiTiPVEawoeNwhMqJDyGcbsEOZp2pLokCQQDvlMBU6dOeOP9a
+jnENFSlrvzNR0nugFeoGmfq6s4Czz2QtUd9baKqBfEBSdJskwFVHgxbFA1Dc7iFu
+rJkoQEeFAkEA32j9ibSVryxLvWUZngKNwo2xE+wcYDAYVBMsYC3OBU3FXhVkFD06
+ZVnJsY/4bd2VdQI+bI2KV99aHutMJG2WYwJABMn2ZjweTMVa5VZ/kAFiSJMT1Yjd
+i7+kY+lkB6Na6T02BWnjixI2hkwThRJrn3pwufM2201Lqn7gEDRHA3T1eQJBAKZG
+1RUNo6558HEo8vUIf4vCu33RaJkqkqDYmFmJHeISrQfGMfNiUrkmJ5iRR9w1ZExu
+/Bj9C281XDTQ+Z3PNnMCQQCan+pvj0OZH6o0PAMJGBBwRECPpfZ6mUjwA2YD3g61
+MHjtIYmKKGmn64Qs8zQ4mNEDboQqyaov3Ij/I6c0ZQlc
+-----END RSA PRIVATE KEY-----
 
 
 
