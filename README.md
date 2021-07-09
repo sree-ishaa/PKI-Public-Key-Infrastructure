@@ -267,6 +267,11 @@ OID describes the object. It is a series of nodes separated by period.
    - If number of value bytes is < 128 then length is represented in 1 byte. In this case most significant bit is 0. (Ex:- Line 2, Line 3 in structured DER content above)
    - If number of value bytes is >= 128 then length is represented in multiple bytes. Most significant bit (bit 7) of first byte is 1 indicating multiple byte length. Bits 0–6 represent number of subsequent bytes for length. (Ex:- Line 1, Line 4 in structured DER content above)
 
+**References**
+
+- DER encoding of ASN.1 types (MSDN)[https://docs.microsoft.com/en-us/windows/win32/seccertenroll/about-der-encoding-of-asn-1-types]
+- Public Key Info structure (Java doc)[http://javadoc.iaik.tugraz.at/iaik_jce/current/iaik/x509/PublicKeyInfo.html]
+
 
 
 
